@@ -31,9 +31,6 @@ grub-install /dev/sda
 echo 'Обновляем grub.cfg'
 grub-mkconfig -o /boot/grub/grub.cfg
 
-echo 'Ставим программу для Wi-fi'
-pacman -S dialog wpa_supplicant --noconfirm 
-
 echo 'Добавляем пользователя'
 useradd -m -g users -G wheel -s /bin/bash $username
 
@@ -63,7 +60,7 @@ echo 'Ставим иксы и драйвера'
 pacman -S $gui_install
 
 echo "Ставим XFCE"
-pacman -S xfce4 xfce4-goodies --noconfirm
+pacman -S xfce4 --noconfirm
 
 echo 'Cтавим DM'
 pacman -S lxdm --noconfirm
